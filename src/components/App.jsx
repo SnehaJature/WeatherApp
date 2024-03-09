@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import SearchEngine from "./SearchEngine";
 import Forecast from "./Forecast";
-
+import Sidebar from "./Sidebar";
 import "../styles.css";
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
@@ -89,6 +89,9 @@ function App() {
     return (
         <div className="App">
 
+
+            <Sidebar />
+
             {/* SearchEngine component */}
             <SearchEngine query={query} setQuery={setQuery} search={search} />
 
@@ -96,7 +99,7 @@ function App() {
                 <>
                     <br />
                     <br />
-                    <h4>Searching..</h4>
+                    <h4 style={{ fontFamily: "font", color: "red" }}>Searching..</h4>
                 </>
             )}
 
@@ -105,7 +108,7 @@ function App() {
                     <br />
                     <br />
                     <span className="error-message">
-                        <span style={{ fontFamily: "font" }}>
+                        <span style={{ fontFamily: "font"}}>
                             Sorry city not found, please try again.
                         </span>
                     </span>
